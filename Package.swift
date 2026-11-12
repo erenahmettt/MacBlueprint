@@ -9,5 +9,6 @@ let package = Package(
     ],
     targets: [
         .target(name: "BlueprintCore"),
+        .testTarget(name: "BlueprintCoreTests", dependencies: ["BlueprintCore"]),
     ]
 )
