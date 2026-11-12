@@ -9,6 +9,8 @@
 
 > **Status:** v0.3: a native macOS app and a command-line tool. See the [roadmap](#roadmap).
 
+![The restore checklist in MacBlueprint](assets/screenshots/restore.png)
+
 ```
 old Mac                                   new Mac
 macblueprint scan -o old-mac.json   →   macblueprint restore old-mac.json --match-casks
@@ -58,15 +60,33 @@ MacBlueprint comes as a native SwiftUI app and as a command-line tool. Both use 
 | **Compare** | Open a snapshot of your old Mac (⌘O, or drop the file on the window) to see what this Mac is missing. |
 | **Restore** | A checklist of everything that can be installed automatically, plus the steps that need you. Run a dry run, install with a live log, or export `PLAN.md`, `Brewfile` and `restore.sh`. Casks matched only by app name start unchecked. |
 
+| Snapshot | Compare |
+|---|---|
+| ![A saved snapshot of an older MacBook](assets/screenshots/snapshot.png) | ![What the new Mac is missing](assets/screenshots/compare.png) |
+
+**No old Mac at hand?** Open [`Examples/work-macbook-2021.json`](Examples/work-macbook-2021.json) with ⌘O to try Compare and Restore against a sample snapshot, or run `macblueprint diff Examples/work-macbook-2021.json`. The screenshots above use it too.
+
 The app isn't sandboxed (it needs to run `brew`), so it's distributed outside the Mac App Store.
 
 ## Install
 
 Requires macOS 14 or later. Both downloads are universal (Apple silicon and Intel).
 
-**App:** download `MacBlueprint-<version>.zip` from the [latest release](https://github.com/erenahmettt/MacBlueprint/releases/latest), unzip it and move MacBlueprint to Applications. The app isn't notarized yet, so the first time you open it macOS will say it can't check it for malicious software. Open **System Settings → Privacy & Security** and click **Open Anyway**.
+**With Homebrew:**
 
-**Command-line tool:** download `macblueprint-<version>-macos.zip` from the same release, then:
+```bash
+brew tap erenahmettt/tap && brew trust erenahmettt/tap
+brew install --cask macblueprint     # the app
+brew install --formula macblueprint  # the command-line tool
+```
+
+The app isn't notarized, so the cask clears macOS's quarantine flag after installing, the same thing you'd otherwise do by hand. The [tap's README](https://github.com/erenahmettt/homebrew-tap#why-a-separate-tap-and-why-the-trust-step) explains why and how to opt out.
+
+**Or download it yourself:**
+
+- **App:** download `MacBlueprint-<version>.zip` from the [latest release](https://github.com/erenahmettt/MacBlueprint/releases/latest), unzip it and move MacBlueprint to Applications. The app isn't notarized yet, so the first time you open it macOS will say it can't check it for malicious software. Open **System Settings → Privacy & Security** and click **Open Anyway**.
+
+- **Command-line tool:** download `macblueprint-<version>-macos.zip` from the same release, then:
 
 ```bash
 unzip macblueprint-*-macos.zip && sudo mv macblueprint /usr/local/bin/
