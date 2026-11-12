@@ -68,8 +68,10 @@ struct ContentView: View {
         switch model.sidebar {
         case .thisMac, nil:
             ThisMacView()
-        case .compare, .restore:
-            ContentUnavailableView("Coming soon", systemImage: "hammer")
+        case .compare:
+            CompareView()
+        case .restore:
+            RestoreView()
         case .saved(let id):
             if let record = records.first(where: { $0.id == id }) {
                 SavedSnapshotView(record: record)
