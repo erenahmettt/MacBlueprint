@@ -167,3 +167,36 @@ import Testing
         return (process.terminationStatus, String(decoding: data, as: UTF8.self))
     }
 }
+
+@Suite struct RestoreSelectionTests {
+    @Test func listsEveryAutomatedStepAndLeavesNameOnlyMatchesUnselected() throws {
+        var plan = RestorePlanTests.plan(catalog: try CaskCatalogTests.catalog())
+        plan.casks.append(RestorePlan.CaskInstall(token: "zoom", note: "matched by app name", needsReview: true))
+
+        let ids = plan.items.map(\.id)
+
+        #expect(ids == [
+            "tap:nikitabobko/tap",
+            "formula:git", "formula:starship",
+            "cask:visual-studio-code", "cask:spotify", "cask:zoom",
+            "mas:441258766",
+            "extension:vscode:esbenp.prettier-vscode",
+        ], "mas is not listed: it follows the App Store apps")
+        #expect(!plan.defaultSelection.contains("cask:zoom"))
+        #expect(plan.defaultSelection.count == ids.count - 1)
+    }
+
+    @Test func selectingKeepsOnlyChosenStepsAndManualOnes() {
+        let plan = RestorePlanTests.plan()
+
+        let picked = plan.selecting(["formula:git", "extension:vscode:esbenp.prettier-vscode"])
+
+        #expect(picked.taps.isEmpty)
+        #expect(picked.formulae == ["git"], "mas goes away with the App Store apps")
+        #expect(picked.casks.isEmpty)
+        #expect(picked.appStoreApps.isEmpty)
+        #expect(picked.extensionCount == 1)
+        #expect(picked.manualSteps == plan.manualSteps)
+        #expect(plan.selecting(plan.defaultSelection) == plan)
+    }
+}
