@@ -8,7 +8,7 @@ struct MacBlueprintCommand: AsyncParsableCommand {
         commandName: "macblueprint",
         abstract: "Capture how your Mac is set up, so the next one takes minutes.",
         version: MacBlueprint.version,
-        subcommands: [Scan.self, Export.self],
+        subcommands: [Scan.self, Diff.self, Restore.self, Export.self],
         defaultSubcommand: Scan.self
     )
 }

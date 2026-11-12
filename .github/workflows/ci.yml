@@ -29,3 +29,11 @@ jobs:
         run: |
           swift run macblueprint scan --label "CI runner" --markdown -o ci-snapshot.json
           swift run macblueprint export ci-snapshot.json > /dev/null
+          swift run macblueprint diff ci-snapshot.json
+
+      - name: Restore plan for the whole runner (dry run)
+        run: |
+          swift run macblueprint restore ci-snapshot.json --everything --match-casks -o ci-restore
+          cat ci-restore/PLAN.md
+          bash -n ci-restore/restore.sh
+          ci-restore/restore.sh --dry-run
