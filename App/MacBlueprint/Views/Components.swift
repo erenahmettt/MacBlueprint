@@ -79,7 +79,7 @@ struct AppIcon: View {
                     .resizable()
             } else {
                 // Not on this Mac: the generic app icon, dimmed.
-                Image(nsImage: NSWorkspace.shared.icon(for: .application))
+                Image(nsImage: NSWorkspace.shared.icon(for: .applicationBundle))
                     .resizable()
                     .opacity(0.6)
             }
