@@ -14,7 +14,7 @@ struct MacBlueprintApp: App {
                 .frame(minWidth: 880, minHeight: 560)
         }
         .defaultSize(width: 1080, height: 700)
-        .modelContainer(for: SnapshotRecord.self)
+        .modelContainer(Self.modelContainer)
         .commands {
             CommandGroup(after: .newItem) {
                 Button("Open Snapshot…") { model.isImporting = true }
@@ -27,4 +27,18 @@ struct MacBlueprintApp: App {
             }
         }
     }
+
+    /// The list of saved snapshots lives in MacBlueprint's own folder. Without
+    /// an explicit URL, SwiftData uses ~/Library/Application Support/default.store
+    /// for apps outside the sandbox, a file other apps may share.
+    static let modelContainer: ModelContainer = {
+        let url = URL.applicationSupportDirectory.appending(path: "MacBlueprint/Library.store")
+        do {
+            try FileManager.default.createDirectory(at: url.deletingLastPathComponent(), withIntermediateDirectories: true)
+            return try ModelContainer(for: SnapshotRecord.self, configurations: ModelConfiguration(url: url))
+        } catch {
+            // Saved snapshots are files on disk; losing the index for a session is not fatal.
+            return try! ModelContainer(for: SnapshotRecord.self, configurations: ModelConfiguration(isStoredInMemoryOnly: true))
+        }
+    }()
 }

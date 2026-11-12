@@ -57,7 +57,7 @@ public struct ToolInfo: Codable, Sendable, Equatable {
 }
 
 public enum MacBlueprint {
-    public static let version = "0.3.0"
+    public static let version = "0.3.1"
 }
 
 public struct MachineInfo: Codable, Sendable, Equatable {
