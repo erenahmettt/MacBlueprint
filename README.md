@@ -7,7 +7,7 @@
 ![macOS 14+](https://img.shields.io/badge/macOS-14%2B-blue)
 ![License: MIT](https://img.shields.io/badge/license-MIT-green)
 
-> **Status:** v0.3 in progress: a native macOS app alongside the command-line tool. See the [roadmap](#roadmap).
+> **Status:** v0.3: a native macOS app and a command-line tool. See the [roadmap](#roadmap).
 
 ```
 old Mac                                   new Mac
@@ -62,20 +62,24 @@ The app isn't sandboxed (it needs to run `brew`), so it's distributed outside th
 
 ## Install
 
-Requires macOS 14+ and Swift 6 (Xcode 16 or newer).
+Requires macOS 14 or later. Both downloads are universal (Apple silicon and Intel).
 
-**App:** open `App/MacBlueprint.xcodeproj` in Xcode and press ⌘R. A prebuilt download is planned.
+**App:** download `MacBlueprint-<version>.zip` from the [latest release](https://github.com/erenahmettt/MacBlueprint/releases/latest), unzip it and move MacBlueprint to Applications. The app isn't notarized yet, so the first time you open it macOS will say it can't check it for malicious software. Open **System Settings → Privacy & Security** and click **Open Anyway**.
 
-**Command-line tool:**
+**Command-line tool:** download `macblueprint-<version>-macos.zip` from the same release, then:
+
+```bash
+unzip macblueprint-*-macos.zip && sudo mv macblueprint /usr/local/bin/
+```
+
+**From source** (Swift 6, Xcode 16 or newer):
 
 ```bash
 git clone https://github.com/erenahmettt/MacBlueprint.git
 cd MacBlueprint
-swift build -c release
-cp .build/release/macblueprint /usr/local/bin/
+swift build -c release            # CLI: .build/release/macblueprint
+open App/MacBlueprint.xcodeproj   # app: press ⌘R
 ```
-
-A Homebrew formula is planned.
 
 ## Usage
 
@@ -209,7 +213,7 @@ Want to add a scanner or find your way around the code? Start with [CONTRIBUTING
 
 - [x] **v0.1:** scan apps, Homebrew, editor extensions, dev tools and shell; export JSON and Markdown
 - [x] **v0.2:** `diff` two snapshots; generate `Brewfile`, `restore.sh` (with `--dry-run`) and `PLAN.md`; match hand-installed apps to Homebrew casks
-- [ ] **v0.3:** SwiftUI app with scan, compare and selective restore (done); Homebrew tap and prebuilt releases (next)
+- [x] **v0.3:** SwiftUI app with scan, compare and selective restore; prebuilt universal releases
 - [ ] **v1.0:** dotfiles with a secret scanner, curated macOS settings, signed and notarized releases
 
 ## Contributing
