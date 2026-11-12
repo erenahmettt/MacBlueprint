@@ -1,0 +1,18 @@
+# SwiftPM / Xcode
+.build/
+.swiftpm/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+DerivedData/
+Package.resolved.bak
+
+# macOS
+.DS_Store
+
+# Snapshots describe a real machine; keep them out of the repo by default
+macblueprint-*.json
+macblueprint-*.md
+macblueprint-restore/
+
+# App builds
+build/
