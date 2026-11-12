@@ -31,6 +31,12 @@ jobs:
           swift run macblueprint export ci-snapshot.json > /dev/null
           swift run macblueprint diff ci-snapshot.json
 
+      - name: Build the macOS app
+        run: |
+          xcodebuild -project App/MacBlueprint.xcodeproj -scheme MacBlueprint \
+            -configuration Release -derivedDataPath build/app \
+            CODE_SIGNING_ALLOWED=NO build
+
       - name: Restore plan for the whole runner (dry run)
         run: |
           swift run macblueprint restore ci-snapshot.json --everything --match-casks -o ci-restore
