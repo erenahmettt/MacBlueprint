@@ -1,0 +1,377 @@
+{
+  "apps": [
+    {
+      "appStoreId": 937984704,
+      "bundleId": "com.if.Amphetamine",
+      "name": "Amphetamine",
+      "path": "/Applications/Amphetamine.app",
+      "source": "appStore",
+      "version": "5.3.2"
+    },
+    {
+      "bundleId": "company.thebrowser.Browser",
+      "name": "Arc",
+      "path": "/Applications/Arc.app",
+      "source": "manual",
+      "version": "1.63.1"
+    },
+    {
+      "bundleId": "com.docker.docker",
+      "caskToken": "docker",
+      "name": "Docker",
+      "path": "/Applications/Docker.app",
+      "source": "homebrew",
+      "version": "4.34.2"
+    },
+    {
+      "bundleId": "com.figma.Desktop",
+      "name": "Figma",
+      "path": "/Applications/Figma.app",
+      "source": "manual",
+      "version": "124.4.7"
+    },
+    {
+      "bundleId": "com.googlecode.iterm2",
+      "caskToken": "iterm2",
+      "name": "iTerm",
+      "path": "/Applications/iTerm.app",
+      "source": "homebrew",
+      "version": "3.5.4"
+    },
+    {
+      "appStoreId": 409183694,
+      "bundleId": "com.apple.iWork.Keynote",
+      "name": "Keynote",
+      "path": "/Applications/Keynote.app",
+      "source": "appStore",
+      "version": "14.1"
+    },
+    {
+      "bundleId": "dev.example.lunar-toolkit",
+      "name": "Lunar Toolkit",
+      "path": "/Applications/Lunar Toolkit.app",
+      "source": "manual",
+      "version": "2.3.0"
+    },
+    {
+      "appStoreId": 441258766,
+      "bundleId": "id.arunro.magnet",
+      "name": "Magnet",
+      "path": "/Applications/Magnet.app",
+      "source": "appStore",
+      "version": "2.14.0"
+    },
+    {
+      "bundleId": "notion.id",
+      "name": "Notion",
+      "path": "/Applications/Notion.app",
+      "source": "manual",
+      "version": "3.15.0"
+    },
+    {
+      "bundleId": "md.obsidian",
+      "name": "Obsidian",
+      "path": "/Applications/Obsidian.app",
+      "source": "manual",
+      "version": "1.6.7"
+    },
+    {
+      "bundleId": "com.postmanlabs.mac",
+      "name": "Postman",
+      "path": "/Applications/Postman.app",
+      "source": "manual",
+      "version": "11.14.0"
+    },
+    {
+      "bundleId": "com.raycast.macos",
+      "name": "Raycast",
+      "path": "/Applications/Raycast.app",
+      "source": "manual",
+      "version": "1.83.1"
+    },
+    {
+      "bundleId": "com.knollsoft.Rectangle",
+      "caskToken": "rectangle",
+      "name": "Rectangle",
+      "path": "/Applications/Rectangle.app",
+      "source": "homebrew",
+      "version": "0.84"
+    },
+    {
+      "bundleId": "com.apple.Safari",
+      "name": "Safari",
+      "path": "/Applications/Safari.app",
+      "source": "system",
+      "version": "18.0"
+    },
+    {
+      "bundleId": "com.tinyspeck.slackmacgap",
+      "name": "Slack",
+      "path": "/Applications/Slack.app",
+      "source": "manual",
+      "version": "4.40.128"
+    },
+    {
+      "bundleId": "com.tinyapp.TablePlus",
+      "name": "TablePlus",
+      "path": "/Applications/TablePlus.app",
+      "source": "manual",
+      "version": "6.1.8"
+    },
+    {
+      "appStoreId": 904280696,
+      "bundleId": "com.culturedcode.ThingsMac",
+      "name": "Things 3",
+      "path": "/Applications/Things 3.app",
+      "source": "appStore",
+      "version": "3.20.2"
+    },
+    {
+      "bundleId": "com.microsoft.VSCode",
+      "caskToken": "visual-studio-code",
+      "name": "Visual Studio Code",
+      "path": "/Applications/Visual Studio Code.app",
+      "source": "homebrew",
+      "version": "1.94.2"
+    },
+    {
+      "appStoreId": 497799835,
+      "bundleId": "com.apple.dt.Xcode",
+      "name": "Xcode",
+      "path": "/Applications/Xcode.app",
+      "source": "appStore",
+      "version": "16.0"
+    }
+  ],
+  "createdAt": "2026-11-10T18:42:00Z",
+  "devEnvironment": {
+    "developerDirectory": "/Applications/Xcode.app/Contents/Developer",
+    "tools": [
+      {
+        "manager": "homebrew",
+        "name": "docker",
+        "path": "/usr/local/bin/docker",
+        "version": "27.2.0"
+      },
+      {
+        "manager": "homebrew",
+        "name": "gh",
+        "path": "/usr/local/bin/gh",
+        "version": "2.58.0"
+      },
+      {
+        "manager": "homebrew",
+        "name": "git",
+        "path": "/usr/local/bin/git",
+        "version": "2.46.2"
+      },
+      {
+        "manager": "nvm",
+        "name": "node",
+        "path": "/Users/dev/.nvm/versions/node/v20.17.0/bin/node",
+        "version": "20.17.0"
+      },
+      {
+        "manager": "nvm",
+        "name": "pnpm",
+        "path": "/Users/dev/.nvm/versions/node/v20.17.0/bin/pnpm",
+        "version": "9.12.1"
+      },
+      {
+        "manager": "pyenv",
+        "name": "python3",
+        "path": "/Users/dev/.pyenv/shims/python3",
+        "version": "3.12.6"
+      },
+      {
+        "manager": "system",
+        "name": "swift",
+        "path": "/usr/bin/swift",
+        "version": "6.0"
+      }
+    ],
+    "versionManagers": [
+      {
+        "installedVersions": [
+          "v18.20.4",
+          "v20.17.0"
+        ],
+        "name": "nvm"
+      },
+      {
+        "installedVersions": [
+          "3.11.9",
+          "3.12.6"
+        ],
+        "name": "pyenv"
+      }
+    ]
+  },
+  "editors": [
+    {
+      "editor": "vscode",
+      "extensions": [
+        {
+          "id": "dbaeumer.vscode-eslint",
+          "version": "3.0.10"
+        },
+        {
+          "id": "eamodio.gitlens",
+          "version": "15.5.1"
+        },
+        {
+          "id": "esbenp.prettier-vscode",
+          "version": "11.0.0"
+        },
+        {
+          "id": "github.copilot",
+          "version": "1.234.0"
+        },
+        {
+          "id": "ms-azuretools.vscode-docker",
+          "version": "1.29.3"
+        },
+        {
+          "id": "ms-python.python",
+          "version": "2024.16.1"
+        },
+        {
+          "id": "ms-vscode-remote.remote-containers",
+          "version": "0.388.0"
+        },
+        {
+          "id": "swiftlang.swift-vscode",
+          "version": "2.16.6"
+        }
+      ]
+    }
+  ],
+  "homebrew": {
+    "casks": [
+      {
+        "apps": [
+          "Docker.app"
+        ],
+        "token": "docker",
+        "version": "4.34.2"
+      },
+      {
+        "apps": [
+          "iTerm.app"
+        ],
+        "token": "iterm2",
+        "version": "3.5.4"
+      },
+      {
+        "apps": [
+          "Rectangle.app"
+        ],
+        "token": "rectangle",
+        "version": "0.84"
+      },
+      {
+        "apps": [
+          "Visual Studio Code.app"
+        ],
+        "token": "visual-studio-code",
+        "version": "1.94.2"
+      }
+    ],
+    "formulae": [
+      {
+        "name": "fzf",
+        "onRequest": true,
+        "version": "0.55.0"
+      },
+      {
+        "name": "gh",
+        "onRequest": true,
+        "version": "2.58.0"
+      },
+      {
+        "name": "git",
+        "onRequest": true,
+        "version": "2.46.2"
+      },
+      {
+        "name": "jq",
+        "onRequest": true,
+        "version": "1.7.1"
+      },
+      {
+        "name": "nikitabobko/tap/aerospace",
+        "onRequest": true,
+        "version": "0.14.2"
+      },
+      {
+        "name": "oniguruma",
+        "onRequest": false,
+        "version": "6.9.9"
+      },
+      {
+        "name": "openssl@3",
+        "onRequest": false,
+        "version": "3.3.2"
+      },
+      {
+        "name": "pcre2",
+        "onRequest": false,
+        "version": "10.44"
+      },
+      {
+        "name": "postgresql@16",
+        "onRequest": true,
+        "version": "16.4"
+      },
+      {
+        "name": "pyenv",
+        "onRequest": true,
+        "version": "2.4.14"
+      },
+      {
+        "name": "readline",
+        "onRequest": false,
+        "version": "8.2.13"
+      },
+      {
+        "name": "redis",
+        "onRequest": true,
+        "version": "7.2.5"
+      },
+      {
+        "name": "ripgrep",
+        "onRequest": true,
+        "version": "14.1.1"
+      },
+      {
+        "name": "starship",
+        "onRequest": true,
+        "version": "1.20.1"
+      }
+    ],
+    "installed": true,
+    "prefix": "/usr/local",
+    "taps": [
+      "nikitabobko/tap"
+    ]
+  },
+  "label": "Work MacBook (2021)",
+  "machine": {
+    "architecture": "x86_64",
+    "model": "MacBookPro16,1",
+    "osVersion": "15.7.0"
+  },
+  "schemaVersion": 1,
+  "shell": {
+    "frameworks": [
+      "oh-my-zsh"
+    ],
+    "loginShell": "/bin/zsh",
+    "prompt": "starship"
+  },
+  "tool": {
+    "name": "macblueprint",
+    "version": "0.3.1"
+  },
+  "warnings": []
+}
